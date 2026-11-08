@@ -28,3 +28,10 @@ use the editor.
   own key and store it in Secrets.
 - **Secrets.** Lovable manages them. Do not put secret values in the repo.
 <!-- LOVABLE:END -->
+
+## Project rules
+- Email subscriptions go through `src/lib/subscription/provider.ts` (EmailMarketingProvider, server-only, selected by `EMAIL_PROVIDER` env) — swap providers without touching the form UI.
+- Without a configured provider the form shows demo mode and never fakes success or stores data.
+- The ebook link comes only from server env `EBOOK_DOWNLOAD_URL`, returned after a confirmed subscription.
+- Analytics events go through `src/lib/analytics.ts` (dataLayer only, no trackers installed).
+- All user-facing text is Spanish.
