@@ -22,7 +22,7 @@ export const notConfiguredProvider: EmailMarketingProvider = {
 };
 
 export function getEmailMarketingProvider(): EmailMarketingProvider {
-  const id = process.env.EMAIL_PROVIDER;
+  const id = process.env["EMAIL_PROVIDER"];
   switch (id) {
     // case "mailerlite": return createMailerLiteProvider(process.env.MAILERLITE_API_KEY!, process.env.MAILERLITE_GROUP_ID!);
     default:
@@ -32,5 +32,5 @@ export function getEmailMarketingProvider(): EmailMarketingProvider {
 
 /** Ebook link is only handed out after a confirmed subscription. */
 export function getEbookDownloadUrl(): string | null {
-  return process.env.EBOOK_DOWNLOAD_URL || null;
+  return process.env["EBOOK_DOWNLOAD_URL"] || null;
 }
